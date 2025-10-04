@@ -1,25 +1,26 @@
 import { NextResponse } from "next/server";
-import { connectDB } from "@/lib/mongodb";
-import User from "@/models/User";
+import fs from "fs";
+import path from "path";
 
-export async function POST(req: Request) {
-  try {
-    const { email, password } = await req.json();
+const filePath = path.join(process.cwd(), "data", "users.json");
 
-    if (!email || !password) {
-      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
-    }
+export async function POST(request: Request) {
+  const { email, password } = await request.json();
 
-    await connectDB();
-
-    const user = await User.findOne({ email, password });
-
-    if (!user) {
-      return NextResponse.json({ error: "Invalid credentials" }, { status: 401 });
-    }
-
-    return NextResponse.json({ message: "Login successful", user }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+  if (!email || !password) {
+    return NextResponse.json({ error: "All fields are required." }, { status: 400 });
   }
+
+  // Read user data
+  const usersData = fs.readFileSync(filePath, "utf-8");
+  const users = JSON.parse(usersData);
+
+  // Check for matching user
+  const user = users.find((u: any) => u.email === email && u.password === password);
+
+  if (!user) {
+    return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
+  }
+
+  return NextResponse.json({ message: "Login successful!" }, { status: 200 });
 }

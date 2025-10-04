@@ -1,22 +1,39 @@
-import { NextResponse } from "next/server";
-import { connectDB } from "@/lib/mongodb";
-import Message from "@/models/Message";
+import { promises as fs } from "fs";
+import path from "path";
 
-export async function POST(req: Request) {
+export async function POST(req: { json: () => any; }) {
   try {
-    const { name, email, message } = await req.json();
+    const body = await req.json();
+    const { name, email, message } = body;
 
     if (!name || !email || !message) {
-      return NextResponse.json({ error: "All fields are required" }, { status: 400 });
+      return new Response(JSON.stringify({ error: "All fields required" }), { status: 400 });
     }
 
-    await connectDB();
+    const filePath = path.join(process.cwd(), "data", "messages.json");
+    let messages = [];
 
-    const newMessage = new Message({ name, email, message });
-    await newMessage.save();
+    try {
+      const fileData = await fs.readFile(filePath, "utf-8");
+      messages = JSON.parse(fileData);
+    } catch (err) {
+      messages = []; // if file not found, start fresh
+    }
 
-    return NextResponse.json({ message: "Message sent successfully" }, { status: 201 });
-  } catch (error) {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    const newMessage = {
+      id: Date.now(),
+      name,
+      email,
+      message,
+      createdAt: new Date().toISOString(),
+    };
+
+    messages.push(newMessage);
+
+    await fs.writeFile(filePath, JSON.stringify(messages, null, 2));
+
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: "Server error" }), { status: 500 });
   }
 }
