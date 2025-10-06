@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import "./ContactPage.css"; // Import the CSS file
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -9,7 +10,7 @@ export default function ContactPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -44,37 +45,35 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
-      <div className="max-w-md w-full p-6 shadow-lg rounded-lg bg-white">
-        <h1 className="text-2xl font-bold mb-4 text-black">Contact Us</h1>
+    <div className="contact-page">
+      <div className="contact-container">
+        <h1>Contact Us</h1>
 
-        {error && <p className="text-red-500">{error}</p>}
-        {success && <p className="text-green-600">{success}</p>}
+        {error && <p className="error-message">{error}</p>}
+        {success && <p className="success-message">{success}</p>}
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Your name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="border p-2 rounded text-black placeholder-black"
+            required
           />
           <input
             type="email"
             placeholder="Your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="border p-2 rounded text-black placeholder-black"
+            required
           />
           <textarea
             placeholder="Your message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="border p-2 rounded text-black placeholder-black"
+            required
           />
-          <button type="submit" className="bg-blue-600 text-white py-2 rounded">
-            Send Message
-          </button>
+          <button type="submit">Send Message</button>
         </form>
       </div>
     </div>

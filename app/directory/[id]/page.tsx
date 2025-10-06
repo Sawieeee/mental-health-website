@@ -1,37 +1,41 @@
 import { directory } from "@/data/directory";
+import "./DirectoryDetail.css";
 
 interface Props {
   params: { id: string };
 }
 
 export default function DirectoryDetail({ params }: Props) {
-  const person = directory.find((p) => p.id === params.id);
+  // Convert id to number (since params.id is a string)
+  const person = directory.find((p) => p.id === Number(params.id));
 
   if (!person) {
-    return <div className="p-8 text-center text-red-600">❌ Person not found</div>;
+    return <div className="not-found">❌ Person not found</div>;
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <div className="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow">
-        <div className="flex flex-col items-center">
+    <div className="directory-detail-page">
+      <div className="directory-detail-card">
+        <div className="directory-header">
           <img
             src={person.image}
             alt={person.name}
-            className="w-40 h-40 rounded-full object-cover mb-6 border-4 border-blue-500"
+            className="profile-image"
           />
-          <h1 className="text-3xl font-bold text-gray-900">{person.name}</h1>
-          <p className="text-lg text-blue-600 font-medium">{person.role}</p>
+          <h1 className="profile-name">{person.name}</h1>
+          <p className="profile-role">{person.role}</p>
         </div>
 
-        <div className="mt-6 text-gray-800 space-y-4">
-          <p>{person.description}</p>
-          <p>
-            <strong>📞 Phone:</strong> {person.phone}
-          </p>
-          <p>
-            <strong>📧 Email:</strong> {person.email}
-          </p>
+        <div className="directory-details">
+          <p className="description">{person.description}</p>
+          <div className="contact-info">
+            <p>
+              <strong>📞 Phone:</strong> {person.phone}
+            </p>
+            <p>
+              <strong>📧 Email:</strong> {person.email}
+            </p>
+          </div>
         </div>
       </div>
     </div>

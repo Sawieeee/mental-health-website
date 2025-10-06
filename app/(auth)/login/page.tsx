@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import "./LoginPage.css"; // 👈 import your custom CSS file
 
 export default function LoginPage() {
   const router = useRouter();
@@ -11,7 +12,6 @@ export default function LoginPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setError("");
 
     if (!email || !password) {
@@ -33,24 +33,24 @@ export default function LoginPage() {
         return;
       }
 
-      router.push("/"); // ✅ redirect to homepage
+      router.push("/");
     } catch (err) {
       setError("Server error");
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md bg-white p-8 rounded-2xl shadow-lg">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
+    <div className="login-page">
+      <div className="login-box">
+        <h2 className="login-title">Login</h2>
 
-        {error && <p className="text-red-500 mb-4 text-sm">{error}</p>}
+        {error && <p className="error-message">{error}</p>}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="login-form">
           <input
             type="email"
             placeholder="Email"
-            className="w-full border rounded-lg p-3 text-lg font-semibold text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="form-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -58,22 +58,19 @@ export default function LoginPage() {
           <input
             type="password"
             placeholder="Password"
-            className="w-full border rounded-lg p-3 text-lg font-semibold text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="form-input"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
-          >
+          <button type="submit" className="submit-button">
             Login
           </button>
         </form>
 
-        <p className="text-gray-600 text-sm text-center mt-4">
+        <p className="signup-text">
           Don’t have an account?{" "}
-          <a href="/signup" className="text-blue-600 hover:underline">
+          <a href="/signup" className="signup-link">
             Sign Up
           </a>
         </p>

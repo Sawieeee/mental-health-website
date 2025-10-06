@@ -1,6 +1,6 @@
-"use client"; // add this if you're in Next.js App Router
-
+"use client";
 import { useState } from "react";
+import "./ContactForm.css"; // import your custom CSS file
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -37,18 +37,17 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="p-4 max-w-md mx-auto shadow-lg rounded">
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {success && <p style={{ color: "green" }}>{success}</p>}
+    <form onSubmit={handleSubmit} className="contact-form">
+      {error && <p className="error">{error}</p>}
+      {success && <p className="success">{success}</p>}
 
-      <h2 className="text-xl font-bold mb-2">Contact Us</h2>
+      <h2>Contact Us</h2>
 
       <input
         type="text"
         placeholder="Your Name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="border p-2 w-full mb-2"
         required
       />
       <input
@@ -56,19 +55,15 @@ export default function ContactForm() {
         placeholder="Your Email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="border p-2 w-full mb-2"
         required
       />
       <textarea
         placeholder="Your Message"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
-        className="border p-2 w-full mb-2"
         required
       ></textarea>
-      <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-        Send Message
-      </button>
+      <button type="submit">Send Message</button>
     </form>
   );
 }

@@ -1,14 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import "./AssessmentPage.css"; // Import CSS file
 
-type Question = {
-  id: number;
-  text: string;
-  options: { label: string; value: number }[];
-};
-
-const questions: Question[] = [
+const questions = [
   {
     id: 1,
     text: "How often do you feel overwhelmed by responsibilities?",
@@ -42,10 +37,10 @@ const questions: Question[] = [
 ];
 
 export default function AssessmentPage() {
-  const [answers, setAnswers] = useState<Record<number, number>>({});
-  const [result, setResult] = useState<string | null>(null);
+  const [answers, setAnswers] = useState({});
+  const [result, setResult] = useState(null);
 
-  const handleAnswer = (questionId: number, value: number) => {
+  const handleAnswer = (questionId, value) => {
     setAnswers((prev) => ({ ...prev, [questionId]: value }));
   };
 
@@ -57,30 +52,30 @@ export default function AssessmentPage() {
     } else if (totalScore <= 5) {
       setResult("⚠️ Moderate Stress: Consider practicing relaxation techniques.");
     } else {
-      setResult("❌ High Stress: It may help to talk to a counselor or mental health professional.");
+      setResult(
+        "❌ High Stress: It may help to talk to a counselor or mental health professional."
+      );
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <h1 className="text-3xl font-bold text-center mb-6">Self-Assessment Quiz</h1>
-      <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+    <div className="assessment-container">
+      <h1 className="assessment-title">Self-Assessment Quiz</h1>
+      <p className="assessment-description">
         Answer the following questions honestly to reflect on your current stress levels.
       </p>
 
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="questions-wrapper">
         {questions.map((q) => (
-          <div key={q.id} className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-lg font-semibold mb-4">{q.text}</h2>
-            <div className="flex flex-wrap gap-3">
+          <div key={q.id} className="question-card">
+            <h2 className="question-text">{q.text}</h2>
+            <div className="options-group">
               {q.options.map((opt) => (
                 <button
                   key={opt.label}
                   onClick={() => handleAnswer(q.id, opt.value)}
-                  className={`px-4 py-2 rounded-lg border ${
-                    answers[q.id] === opt.value
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-blue-600 border-blue-600 hover:bg-blue-50"
+                  className={`option-button ${
+                    answers[q.id] === opt.value ? "selected" : ""
                   }`}
                 >
                   {opt.label}
@@ -91,18 +86,15 @@ export default function AssessmentPage() {
         ))}
       </div>
 
-      <div className="text-center mt-10">
-        <button
-          onClick={calculateResult}
-          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
-        >
+      <div className="submit-container">
+        <button onClick={calculateResult} className="submit-button">
           Submit Quiz
         </button>
       </div>
 
       {result && (
-        <div className="max-w-2xl mx-auto mt-8 bg-green-50 border border-green-300 text-green-800 p-6 rounded-lg text-center">
-          <h2 className="text-xl font-bold mb-2">Your Result</h2>
+        <div className="result-box">
+          <h2>Your Result</h2>
           <p>{result}</p>
         </div>
       )}

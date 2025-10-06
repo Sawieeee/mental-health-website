@@ -1,0 +1,69 @@
+/* DirectoryDetail.css */
+
+.directory-detail-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.directory-detail-card {
+  background: #ffffffdd;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #2c786c;
+  margin-bottom: 20px;
+}
+
+.profile-name {
+  font-size: 1.8rem;
+  color: #2c786c;
+  font-weight: 700;
+}
+
+.profile-role {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-size: 1rem;
+  color: #333;
+  margin: 8px 0;
+}
+
+.not-found {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 100px;
+}

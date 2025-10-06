@@ -1,0 +1,172 @@
+/* 🌿 ResourcesPage.css */
+
+/* Page layout */
+.resources-page {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #d0f0ea, #f0f5fa, #f7e6f0);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Page title */
+.resources-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Page description */
+.resources-description {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 750px;
+  text-align: center;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 3rem;
+}
+
+.filter-button {
+  padding: 0.8rem 1.8rem;
+  border-radius: 30px;
+  border: none;
+  background: #b2f7ef;
+  color: #2c786c;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.filter-button:hover {
+  background: #7bdcb5;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  background: #2c786c;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(44, 120, 108, 0.3);
+}
+
+/* Resources Grid */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Individual Card */
+.resource-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 1.8rem;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+}
+
+/* Type Badge */
+.resource-type {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #2e7d32;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 15px;
+  text-transform: uppercase;
+}
+
+/* Card Title */
+.resource-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1565c0;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Card Text */
+.resource-text {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Resource Link */
+.resource-link {
+  text-decoration: none;
+  color: #2c786c;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.resource-link:hover {
+  color: #1a4f45;
+  text-decoration: underline;
+  transform: translateX(3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .resources-title {
+    font-size: 2.5rem;
+  }
+
+  .resource-card {
+    padding: 1.5rem;
+  }
+
+  .resource-title {
+    font-size: 1.3rem;
+  }
+
+  .resource-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resources-title {
+    font-size: 2rem;
+  }
+
+  .filter-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .resources-grid {
+    gap: 1.8rem;
+  }
+}
