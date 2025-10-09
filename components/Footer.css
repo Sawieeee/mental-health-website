@@ -1,6 +1,6 @@
 /* === FOOTER STYLES === */
 .footer {
-  background: linear-gradient(135deg, #2e7d32, #43a047);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fff;
   padding: 3rem 2rem;
   position: relative;
@@ -51,7 +51,7 @@
 .footer-links a {
   color: #dcedc8;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   transition: all 0.3s ease;
 }

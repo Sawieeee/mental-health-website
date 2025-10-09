@@ -74,25 +74,25 @@
   flex: 1;
   min-width: 120px;
   padding: 0.9rem 1.2rem;
-  background-color: #e3f2fd;
+  background-color: #e8f5e9;
   border: 2px solid transparent;
   border-radius: 12px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  color: #1565c0;
+  color: var(--primary-700);
   box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 .option-button:hover {
-  background-color: #bbdefb;
+  background-color: #dcedc8;
   transform: translateY(-2px);
 }
 
 .option-button.selected {
-  background-color: #2e7d32;
+  background-color: var(--primary);
   color: #fff;
-  border-color: #1565c0;
+  border-color: var(--teal);
   box-shadow: 0 6px 15px rgba(46,125,50,0.3);
 }
 

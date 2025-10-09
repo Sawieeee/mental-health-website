@@ -49,7 +49,7 @@ export default function HomePage() {
               height={250}
               className="card-img"
             />
-            <h3>📚 Resources</h3>
+            <h3>Resources</h3>
             <p>Discover articles, videos, and guides tailored for your mental well-being.</p>
           </div>
           <div className="service-card">
@@ -60,7 +60,7 @@ export default function HomePage() {
               height={250}
               className="card-img"
             />
-            <h3>🤝 Support Groups</h3>
+            <h3>Support Groups</h3>
             <p>Connect with others who share similar experiences and support each other.</p>
           </div>
           <div className="service-card">
@@ -71,7 +71,7 @@ export default function HomePage() {
               height={250}
               className="card-img"
             />
-            <h3>📝 Assessments</h3>
+            <h3>Assessments</h3>
             <p>Take a personalized self-assessment to reflect on your mental health journey.</p>
           </div>
           
