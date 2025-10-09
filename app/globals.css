@@ -8,6 +8,15 @@ body {
   scroll-behavior: smooth;
 }
 
+/* Mobile defaults */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+main {
+  min-height: 60vh;
+}
+
 /* === Navbar === */
 .navbar {
   position: sticky;
@@ -21,6 +30,12 @@ body {
   box-shadow: 0 8px 30px rgba(0,0,0,0.12);
   z-index: 100;
   transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1rem;
+  }
 }
 
 .navbar:hover {
@@ -65,7 +80,7 @@ body {
 /* === Hero === */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +88,15 @@ body {
   color: white;
   text-align: center;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 .hero-overlay {
@@ -147,6 +171,12 @@ body {
   gap: 3rem;
 }
 
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 6%;
+  }
+}
+
 .about-text {
   max-width: 500px;
   opacity: 0;
@@ -187,6 +217,12 @@ body {
 .services {
   text-align: center;
   padding: 7rem 5%;
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 3.5rem 5%;
+  }
 }
 
 .services h2 {

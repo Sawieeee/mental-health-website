@@ -1,11 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import "./LoginPage.css"; // 👈 import your custom CSS file
 
 export default function LoginPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const rawReturnTo = searchParams.get("returnTo") || "/";
+  const returnTo = rawReturnTo.startsWith("/") && !rawReturnTo.startsWith("//") ? rawReturnTo : "/";
+  const loginMsg = searchParams.get("msg");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -33,7 +37,7 @@ export default function LoginPage() {
         return;
       }
 
-      router.push("/");
+      router.push(returnTo);
     } catch (err) {
       setError("Server error");
     }
@@ -45,6 +49,13 @@ export default function LoginPage() {
         <h2 className="login-title">Login</h2>
 
         {error && <p className="error-message">{error}</p>}
+        {loginMsg === "login_required" && (
+          <p className="info-message">You must be logged in to view that page.</p>
+        )}
+
+        <p className="info-message">
+          After you log in, you’ll unlock access to Assessment, Directory, Resources, and Support.
+        </p>
 
         <form onSubmit={handleSubmit} className="login-form">
           <input
