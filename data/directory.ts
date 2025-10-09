@@ -1,103 +1,83 @@
 export interface DirectoryItem {
-    id: string;
+    id: number;
     name: string;
     role: string;
     description: string;
     phone: string;
     email: string;
     image: string;
+}
+
+// Pampanga-based institutions and programs (placeholders where specific contact details are needed)
+export const directory: DirectoryItem[] = [
+  {
+    id: 1,
+    name: "Jose B. Lingad Memorial General Hospital (San Fernando)",
+    role: "Tertiary Hospital • Mental Health Services",
+    description:
+      "Public tertiary hospital in San Fernando with psychiatric and behavioral health services. Please check their official channels for the latest clinic schedules.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/2967/2967351.png"
+  },
+  {
+    id: 2,
+    name: "The Medical City Clark (Angeles)",
+    role: "Hospital • Behavioral Medicine / Psychiatry",
+    description:
+      "Private hospital in Clark Freeport Zone providing behavioral medicine and psychiatric services.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/2967/2967351.png"
+  },
+  {
+    id: 3,
+    name: "Angeles University Foundation Medical Center (Angeles)",
+    role: "Teaching Hospital • Psychiatry",
+    description:
+      "AUF Medical Center offering various specialty services including mental health. Contact the hospital or department for appointments.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/2967/2967351.png"
+  },
+  {
+    id: 4,
+    name: "Rafael Lazatin Memorial Medical Center (Ospital Ning Angeles)",
+    role: "Public Hospital • Mental Health Services",
+    description:
+      "City-run hospital known locally as ONA with access to mental health and psychosocial services.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/2967/2967351.png"
+  },
+  {
+    id: 5,
+    name: "Mother Teresa of Calcutta Medical Center (San Fernando)",
+    role: "Private Hospital • Counseling / Psychiatry (by schedule)",
+    description:
+      "Private medical center; check official page for availability of psychiatric consultations and counseling clinics.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/2967/2967351.png"
+  },
+  {
+    id: 6,
+    name: "City of San Fernando Health Office",
+    role: "LGU • Mental Health & Psychosocial Support",
+    description:
+      "Local government mental health and psychosocial support programs. Visit their official Facebook page or city website for active hotlines and schedules.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/9131/9131516.png"
+  },
+  {
+    id: 7,
+    name: "Mabalacat City Health Office",
+    role: "LGU • Community Mental Health Program",
+    description:
+      "Community-based mental health and psychosocial support in Mabalacat. Refer to official announcements for contact info.",
+    phone: "TBD",
+    email: "TBD",
+    image: "https://cdn-icons-png.flaticon.com/512/9131/9131516.png"
   }
-  
-  export const directory: DirectoryItem[] = [
-    {
-      id: "1",
-      name: "Dr. Maria Santos",
-      role: "Psychologist",
-      description: "Specializes in anxiety, depression, and stress management.",
-      phone: "+63 912 345 6789",
-      email: "maria.santos@example.com",
-      image: "https://randomuser.me/api/portraits/women/65.jpg"
-    },
-    {
-      id: "2",
-      name: "Dr. John Dela Cruz",
-      role: "Psychiatrist",
-      description: "Focuses on mood disorders and medication management.",
-      phone: "+63 987 654 3210",
-      email: "john.delacruz@example.com",
-      image: "https://randomuser.me/api/portraits/men/45.jpg"
-    },
-    {
-      id: "3",
-      name: "Ms. Angela Reyes",
-      role: "Guidance Counselor",
-      description: "Helps students and young adults with stress, peer pressure, and career counseling.",
-      phone: "+63 923 111 2233",
-      email: "angela.reyes@example.com",
-      image: "https://randomuser.me/api/portraits/women/50.jpg"
-    },
-    {
-      id: "4",
-      name: "Mr. Carlo Mendoza",
-      role: "Therapist",
-      description: "Provides therapy sessions for trauma recovery and personal growth.",
-      phone: "+63 955 222 3344",
-      email: "carlo.mendoza@example.com",
-      image: "https://randomuser.me/api/portraits/men/51.jpg"
-    },
-    {
-      id: "5",
-      name: "Dr. Sophia Lim",
-      role: "Child Psychologist",
-      description: "Expert in child development, behavioral issues, and family counseling.",
-      phone: "+63 966 333 4455",
-      email: "sophia.lim@example.com",
-      image: "https://randomuser.me/api/portraits/women/52.jpg"
-    },
-    {
-      id: "6",
-      name: "Dr. Miguel Torres",
-      role: "Psychiatrist",
-      description: "Experienced in clinical psychiatry and mental health rehabilitation.",
-      phone: "+63 977 444 5566",
-      email: "miguel.torres@example.com",
-      image: "https://randomuser.me/api/portraits/men/52.jpg"
-    },
-    {
-      id: "7",
-      name: "Dr. Patricia Cruz",
-      role: "Clinical Psychologist",
-      description: "Works with adults on trauma recovery, relationships, and coping strategies.",
-      phone: "+63 933 555 6677",
-      email: "patricia.cruz@example.com",
-      image: "https://randomuser.me/api/portraits/women/48.jpg"
-    },
-    {
-      id: "8",
-      name: "Dr. Adrian Villanueva",
-      role: "Family Counselor",
-      description: "Helps families resolve conflicts and improve communication.",
-      phone: "+63 944 666 7788",
-      email: "adrian.villanueva@example.com",
-      image: "https://randomuser.me/api/portraits/men/47.jpg"
-    },
-    {
-      id: "9",
-      name: "Mental Health Hotline PH",
-      role: "24/7 Crisis Hotline",
-      description: "Immediate assistance for individuals in emotional distress or crisis situations.",
-      phone: "1553 (landline and mobile)",
-      email: "hotline@mentalhealthph.org",
-      image: "https://cdn-icons-png.flaticon.com/512/684/684908.png"
-    },
-    {
-      id: "10",
-      name: "National Center for Mental Health",
-      role: "Crisis Hotline",
-      description: "Provides psychiatric crisis intervention and counseling services.",
-      phone: "0917-899-USAP (8727) / 989-USAP (8727)",
-      email: "ncmh@ncmh.gov.ph",
-      image: "https://cdn-icons-png.flaticon.com/512/3771/3771518.png"
-    }
-  ];
-  
+];

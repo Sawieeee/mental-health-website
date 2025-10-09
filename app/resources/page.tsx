@@ -13,6 +13,7 @@ type Resource = {
 };
 
 const resources: Resource[] = [
+  // Articles
   {
     id: 1,
     title: "Managing Stress Effectively",
@@ -22,13 +23,57 @@ const resources: Resource[] = [
     link: "https://www.verywellmind.com/stress-management-4157211",
   },
   {
+    id: 4,
+    title: "Coping with Depression",
+    type: "Article",
+    description:
+      "Helpful strategies and insights to support people dealing with depression.",
+    link: "https://www.healthline.com/health/depression",
+  },
+  {
+    id: 5,
+    title: "NIMH: Caring for Your Mental Health",
+    type: "Article",
+    description:
+      "U.S. National Institute of Mental Health guide to caring for your mental health.",
+    link: "https://www.nimh.nih.gov/health/topics/caring-for-your-mental-health",
+  },
+  {
+    id: 6,
+    title: "WHO: Mental Health – Fact Sheets",
+    type: "Article",
+    description:
+      "World Health Organization overview pages on mental health topics and services.",
+    link: "https://www.who.int/health-topics/mental-health#tab=tab_1",
+  },
+
+  // Videos
+  {
     id: 2,
-    title: "Understanding Anxiety",
+    title: "Understanding Anxiety (TED-Ed)",
     type: "Video",
     description:
-      "A short educational video explaining symptoms, causes, and coping strategies for anxiety.",
+      "Short video explaining symptoms, causes, and coping strategies for anxiety.",
     link: "https://www.youtube.com/watch?v=WWloIAQpMcQ",
   },
+  {
+    id: 7,
+    title: "What is depression? (TED-Ed)",
+    type: "Video",
+    description:
+      "Animated explanation of depression and its treatment options.",
+    link: "https://www.youtube.com/watch?v=Z-5B8J4bR9A",
+  },
+  {
+    id: 8,
+    title: "WHO: What is Mental Health?",
+    type: "Video",
+    description:
+      "WHO explainer video covering the basics of mental health and wellbeing.",
+    link: "https://www.youtube.com/watch?v=Mn5B5nA1G9s",
+  },
+
+  // Infographics
   {
     id: 3,
     title: "Self-Care Tips",
@@ -38,12 +83,20 @@ const resources: Resource[] = [
     link: "https://www.mentalhealth.org.uk/explore-mental-health/publications/our-best-mental-health-tips",
   },
   {
-    id: 4,
-    title: "Coping with Depression",
-    type: "Article",
+    id: 9,
+    title: "CDC: Coping with Stress",
+    type: "Infographic",
     description:
-      "Helpful strategies and insights to support people dealing with depression.",
-    link: "https://www.healthline.com/health/depression",
+      "Infographic-style guidance from CDC on coping with stress during challenging times.",
+    link: "https://www.cdc.gov/mental-health/stress-coping/index.html",
+  },
+  {
+    id: 10,
+    title: "WHO: Doing What Matters in Times of Stress (Guide)",
+    type: "Infographic",
+    description:
+      "WHO illustrated stress management guide with simple, practical skills.",
+    link: "https://www.who.int/publications/i/item/9789240003927",
   },
 ];
 
