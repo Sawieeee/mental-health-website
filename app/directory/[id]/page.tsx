@@ -57,6 +57,16 @@ export default function DirectoryDetail({ params }: Props) {
             {person.website && (
               <a className="btn" href={person.website} target="_blank" rel="noopener noreferrer">Visit site</a>
             )}
+            {person.address && (
+              <a
+                className="btn outline"
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(person.address)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get directions
+              </a>
+            )}
           </div>
         </div>
       </div>

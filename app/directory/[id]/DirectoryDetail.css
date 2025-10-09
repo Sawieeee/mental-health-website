@@ -29,9 +29,11 @@
 .profile-image {
   width: 150px;
   height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
+  object-fit: contain; /* show full logo */
+  background: #fff;
+  border-radius: 14px;
   border: 5px solid #2c786c;
+  padding: 8px;
   margin-bottom: 20px;
 }
 
