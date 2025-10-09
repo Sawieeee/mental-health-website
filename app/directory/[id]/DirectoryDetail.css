@@ -44,7 +44,13 @@
 .profile-role {
   color: #555;
   font-size: 1.1rem;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
+}
+
+.profile-address {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
 }
 
 .description {
@@ -58,6 +64,35 @@
   font-size: 1rem;
   color: #333;
   margin: 8px 0;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 18px;
+}
+
+.btn {
+  background: #2c786c;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.btn.outline {
+  background: transparent;
+  color: #2c786c;
+  border: 2px solid #2c786c;
 }
 
 .not-found {
