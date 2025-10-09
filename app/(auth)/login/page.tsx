@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import "./LoginPage.css"; // 👈 import your custom CSS file
 
-export default function LoginPage() {
+function LoginInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const rawReturnTo = searchParams.get("returnTo") || "/";
@@ -38,53 +39,63 @@ export default function LoginPage() {
       }
 
       router.push(returnTo);
-    } catch (err) {
+    } catch (_err) {
       setError("Server error");
     }
   };
 
   return (
+    <>
+      <h2 className="login-title">Login</h2>
+
+      {error && <p className="error-message">{error}</p>}
+      {loginMsg === "login_required" && (
+        <p className="info-message">You must be logged in to view that page.</p>
+      )}
+
+      <p className="info-message">
+        After you log in, you’ll unlock access to Assessment, Directory, Resources, and Support.
+      </p>
+
+      <form onSubmit={handleSubmit} className="login-form">
+        <input
+          type="email"
+          placeholder="Email"
+          className="form-input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          className="form-input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit" className="submit-button">
+          Login
+        </button>
+      </form>
+
+      <p className="signup-text">
+        Don’t have an account?{" "}
+        <Link href="/signup" className="signup-link">
+          Sign Up
+        </Link>
+      </p>
+    </>
+  );
+}
+
+export default function LoginPage() {
+  return (
     <div className="login-page">
       <div className="login-box">
-        <h2 className="login-title">Login</h2>
-
-        {error && <p className="error-message">{error}</p>}
-        {loginMsg === "login_required" && (
-          <p className="info-message">You must be logged in to view that page.</p>
-        )}
-
-        <p className="info-message">
-          After you log in, you’ll unlock access to Assessment, Directory, Resources, and Support.
-        </p>
-
-        <form onSubmit={handleSubmit} className="login-form">
-          <input
-            type="email"
-            placeholder="Email"
-            className="form-input"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-
-          <input
-            type="password"
-            placeholder="Password"
-            className="form-input"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-
-          <button type="submit" className="submit-button">
-            Login
-          </button>
-        </form>
-
-        <p className="signup-text">
-          Don’t have an account?{" "}
-          <a href="/signup" className="signup-link">
-            Sign Up
-          </a>
-        </p>
+        <Suspense fallback={null}>
+          <LoginInner />
+        </Suspense>
       </div>
     </div>
   );

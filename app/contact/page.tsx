@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
+import Image from "next/image";
 import "./ContactPage.css"; // Import the CSS file
 
 export default function ContactPage() {
@@ -10,7 +11,7 @@ export default function ContactPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setSuccess("");
@@ -48,6 +49,7 @@ export default function ContactPage() {
     <div className="contact-page">
       <div className="contact-container">
         <h1>Contact Us</h1>
+        <Image src="/images/contact-illustration.svg" alt="Contact" width={420} height={180} style={{marginBottom: '1rem'}} />
 
         {error && <p className="error-message">{error}</p>}
         {success && <p className="success-message">{success}</p>}

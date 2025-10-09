@@ -18,7 +18,7 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #2e7d32;
+  color: var(--primary);
   margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
@@ -26,7 +26,7 @@
 /* Description */
 .assessment-description {
   text-align: center;
-  color: #555;
+  color: var(--muted-text);
   font-size: 1.15rem;
   margin-bottom: 2.5rem;
   line-height: 1.7;
@@ -41,8 +41,8 @@
 
 /* Question Card */
 .question-card {
-  background: rgba(240, 248, 255, 0.85);
-  border-left: 8px solid #43a047;
+  background: var(--surface);
+  border-left: 8px solid var(--accent);
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
@@ -57,7 +57,7 @@
 /* Question Text */
 .question-text {
   font-size: 1.3rem;
-  color: #2e7d32;
+  color: var(--primary);
   margin-bottom: 1.2rem;
   font-weight: 600;
 }
@@ -74,7 +74,7 @@
   flex: 1;
   min-width: 120px;
   padding: 0.9rem 1.2rem;
-  background-color: #e8f5e9;
+  background-color: var(--soft-green);
   border: 2px solid transparent;
   border-radius: 12px;
   font-weight: 500;
@@ -85,7 +85,7 @@
 }
 
 .option-button:hover {
-  background-color: #dcedc8;
+  background-color: var(--soft-green-hover);
   transform: translateY(-2px);
 }
 
@@ -104,7 +104,7 @@
 
 /* Submit Button */
 .submit-button {
-  background-color: #43a047;
+  background-color: var(--primary);
   color: white;
   padding: 1rem 2.5rem;
   border: none;
@@ -117,7 +117,7 @@
 }
 
 .submit-button:hover {
-  background-color: #2e7d32;
+  background-color: var(--primary-600);
   transform: translateY(-3px);
 }
 
@@ -125,7 +125,7 @@
 .result-box {
   margin-top: 3rem;
   background: rgba(232, 245, 233, 0.95);
-  border-left: 8px solid #2e7d32;
+  border-left: 8px solid var(--primary);
   padding: 2rem;
   border-radius: 1.5rem;
   text-align: center;
@@ -134,7 +134,7 @@
 }
 
 .result-box h2 {
-  color: #2e7d32;
+  color: var(--primary);
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }

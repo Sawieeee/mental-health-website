@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Button from "../components/ui/Button";
+import Card from "../components/ui/Card";
 
 export default function HomePage() {
   return (
@@ -12,10 +14,14 @@ export default function HomePage() {
           <h1>Your Mind Deserves Care.</h1>
           <p>Empowering individuals with awareness, support, and compassion.</p>
           <div className="hero-buttons">
-            <a href="/resources" className="btn-primary">Explore Resources</a>
-            <a href="/signup" className="btn-secondary">Join the Community</a>
+            <Button href="/resources">Explore Resources</Button>
+            <Button href="/community" variant="outline">Join the Community</Button>
+          </div>
+          <div style={{marginTop: '2rem'}}>
+            <Image src="/images/hero-illustration.svg" alt="Mental health and support" width={640} height={260} />
           </div>
         </div>
+        <Image src="/images/wave.svg" alt="" aria-hidden className="hero-wave" width={1440} height={160} />
       </section>
 
       {/* About Section with Image */}
@@ -29,7 +35,7 @@ export default function HomePage() {
           </p>
         </div>
         <Image
-          src="/images/flat,750x,075,f-pad,750x1000,f8f8f8.jpg"
+          src="/images/Mental-Health-Assessment.jpg"
           alt="Mental health support"
           width={600}
           height={500}
@@ -41,7 +47,7 @@ export default function HomePage() {
       <section className="services">
         <h2>What We Offer</h2>
         <div className="service-grid">
-          <div className="service-card">
+          <Card className="service-card" href="/resources">
             <Image
               src="/images/mental-health-bulb.jpg"
               alt="Resources"
@@ -51,10 +57,10 @@ export default function HomePage() {
             />
             <h3>Resources</h3>
             <p>Discover articles, videos, and guides tailored for your mental well-being.</p>
-          </div>
-          <div className="service-card">
+          </Card>
+          <Card className="service-card" href="/support">
             <Image
-              src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+              src="/images/support-illustration.svg"
               alt="Support"
               width={400}
               height={250}
@@ -62,8 +68,8 @@ export default function HomePage() {
             />
             <h3>Support Groups</h3>
             <p>Connect with others who share similar experiences and support each other.</p>
-          </div>
-          <div className="service-card">
+          </Card>
+          <Card className="service-card" href="/assessment">
             <Image
               src="/images/Mental-Health-Assessment.jpg"
               alt="Mental Health Assessment"
@@ -73,8 +79,7 @@ export default function HomePage() {
             />
             <h3>Assessments</h3>
             <p>Take a personalized self-assessment to reflect on your mental health journey.</p>
-          </div>
-          
+          </Card>
         </div>
       </section>
 
@@ -82,7 +87,7 @@ export default function HomePage() {
       <section className="cta">
         <h2>Your Journey to Healing Starts Here</h2>
         <p>Join thousands of people finding peace, balance, and purpose with 4U.</p>
-        <a href="/signup" className="btn-primary">Get Started</a>
+        <Button href="/signup" className="btn-primary">Get Started</Button>
       </section>
     </div>
   );

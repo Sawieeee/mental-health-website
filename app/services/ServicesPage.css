@@ -4,7 +4,7 @@
 .services-page {
   min-height: 100vh;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #c8e6c9, #e3f2fd, #f3e5f5);
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff, #ecfeff);
   font-family: 'Poppins', sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 .services-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #2e7d32;
+  color: var(--primary);
   text-align: center;
   margin-bottom: 3rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
@@ -53,14 +53,14 @@
 .service-heading {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #43a047;
+  color: var(--primary);
   margin-bottom: 0.5rem;
 }
 
 /* Service card text */
 .service-text {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted-text);
   line-height: 1.6;
 }
 

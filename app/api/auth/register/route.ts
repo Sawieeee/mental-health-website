@@ -14,10 +14,10 @@ export async function POST(request: Request) {
 
   // Read existing users
   const usersData = fs.readFileSync(filePath, "utf-8");
-  const users = JSON.parse(usersData);
+const users: Array<{ id?: number; name?: string; email: string; password?: string }> = JSON.parse(usersData);
 
   // Check if email already exists
-  const existingUser = users.find((u: any) => u.email === email);
+  const existingUser = users.find((u) => u.email === email);
   if (existingUser) {
     return NextResponse.json({ error: "Email already exists." }, { status: 400 });
   }

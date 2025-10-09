@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" role="img" aria-label="Mental health illustration">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" fill="url(#g1)" opacity="0.08"/>
+  <g transform="translate(200,60)">
+    <circle cx="70" cy="70" r="70" fill="#93c5fd" opacity="0.6"/>
+    <path d="M120 120c40-25 64-60 64-96 0-28-18-46-46-46-14 0-27 5-36 14-9-9-22-14-36-14-28 0-46 18-46 46 0 36 24 71 82 96z" fill="#a78bfa" opacity="0.85"/>
+    <path d="M58 70c8-5 13-12 13-19 0-6-4-10-10-10-3 0-6 1-8 3-2-2-5-3-8-3-6 0-10 4-10 10 0 7 5 14 15 19z" fill="#ecfeff" opacity="0.95"/>
+  </g>
+  <g transform="translate(500,250) rotate(-8)">
+    <rect x="-80" y="-50" rx="16" ry="16" width="160" height="100" fill="#ecfeff" opacity="0.9"/>
+    <path d="M-60 -10 h120" stroke="#2563eb" stroke-width="6" stroke-linecap="round"/>
+    <path d="M-45 10 h90" stroke="#8b5cf6" stroke-width="6" stroke-linecap="round"/>
+  </g>
+</svg>

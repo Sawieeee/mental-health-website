@@ -1,13 +1,11 @@
 import { directory } from "@/data/directory";
 import "./DirectoryDetail.css";
 
-interface Props {
-  params: { id: string };
-}
+import Image from "next/image";
 
-export default function DirectoryDetail({ params }: Props) {
-  // Convert id to number (since params.id is a string)
-  const person = directory.find((p) => p.id === Number(params.id));
+export default async function DirectoryDetail({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const person = directory.find((p) => p.id === Number(id));
 
   if (!person) {
     return <div className="not-found">❌ Person not found</div>;
@@ -17,9 +15,11 @@ export default function DirectoryDetail({ params }: Props) {
     <div className="directory-detail-page">
       <div className="directory-detail-card">
         <div className="directory-header">
-          <img
+          <Image
             src={person.image}
             alt={person.name}
+            width={480}
+            height={360}
             className="profile-image"
           />
           <h1 className="profile-name">{person.name}</h1>

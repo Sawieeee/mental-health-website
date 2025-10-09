@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import "./SignupPage.css";
 
 export default function SignupPage() {
@@ -41,7 +42,7 @@ export default function SignupPage() {
       setTimeout(() => {
         router.push("/login");
       }, 1500);
-    } catch (err) {
+    } catch (_err) {
       setError("Server error");
     }
   };
@@ -85,7 +86,7 @@ export default function SignupPage() {
         </form>
 
         <p className="login-link">
-          Already have an account? <a href="/login">Login</a>
+Already have an account? <Link href="/login">Login</Link>
         </p>
       </div>
     </div>

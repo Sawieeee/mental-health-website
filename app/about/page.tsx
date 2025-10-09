@@ -1,10 +1,12 @@
 import styles from "./AboutPage.module.css";
+import Image from "next/image";
 
 export default function AboutPage() {
   return (
     <div className={styles.page}>
       {/* Page Title */}
       <h1 className={styles.title}>About Us</h1>
+      <Image src="/images/hero-illustration.svg" alt="About 4U" width={560} height={220} style={{marginBottom: '1.5rem'}} />
 
       {/* About Container */}
       <div className={styles.container}>

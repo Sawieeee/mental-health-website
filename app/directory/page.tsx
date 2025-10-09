@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { directory } from "@/data/directory";
 import "./DirectoryPage.css"; // Import your CSS file
 
@@ -19,9 +20,11 @@ export default function DirectoryPage() {
           return (
             <div key={person.id} className="directory-card">
               <Link href={`/directory/${person.id}`} className="directory-card-top">
-                <img
+                <Image
                   src={person.image}
                   alt={person.name}
+                  width={400}
+                  height={300}
                   className="directory-image"
                 />
                 <h2 className="directory-name">{person.name}</h2>

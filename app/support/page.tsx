@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import "./SupportPage.css"; // link to your CSS file
 
 type Post = {
@@ -49,6 +50,7 @@ export default function SupportPage() {
       <p className="support-description">
         Join the discussion, share your experiences, and support each other in a safe environment.
       </p>
+      <Image src="/images/support-illustration.svg" alt="Support" width={640} height={200} style={{margin: '0 auto 1.5rem'}} />
 
       {/* Post Form */}
       <form onSubmit={handlePost} className="post-form">

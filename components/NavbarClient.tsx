@@ -12,7 +12,8 @@ type NavbarClientProps = {
 const baseLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/services", label: "Service" },
+  { href: "/services", label: "Services" },
+  { href: "/community", label: "Community" },
   { href: "/contact", label: "Contact" },
 ];
 

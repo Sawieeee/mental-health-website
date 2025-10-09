@@ -14,10 +14,10 @@ export async function POST(request: Request) {
 
   // Read user data
   const usersData = fs.readFileSync(filePath, "utf-8");
-  const users = JSON.parse(usersData);
+const users: Array<{ id?: number; name?: string; email: string; password?: string }> = JSON.parse(usersData);
 
   // Find user by email
-  const userIndex = users.findIndex((u: any) => u.email === email);
+  const userIndex = users.findIndex((u) => u.email === email);
   if (userIndex === -1) {
     return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
   }

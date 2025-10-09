@@ -11,7 +11,7 @@ export default function LogoutPage() {
       try {
         await fetch("/api/auth/logout", { method: "POST" });
         setStatus("You have been logged out.");
-      } catch (e) {
+      } catch (_e) {
         setStatus("Logout request failed, but your session has likely ended.");
       } finally {
         setTimeout(() => router.push("/login"), 1000);

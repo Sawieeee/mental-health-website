@@ -1,0 +1,29 @@
+/* Community page styles */
+.community-page { padding: 4rem 6%; }
+
+.community-hero { text-align: center; max-width: 900px; margin: 0 auto 2rem; }
+.community-hero h1 { font-size: 2.6rem; font-weight: 900; color: var(--primary); margin-bottom: 0.5rem; }
+.community-hero p { color: var(--muted-text); font-size: 1.15rem; }
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0 3rem;
+}
+
+.community-card { padding: 1.5rem; border-radius: 1.5rem; backdrop-filter: blur(10px); }
+.community-card-body { display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+.community-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.community-card h2 { margin: 0.25rem 0; color: var(--primary); }
+.community-card p { color: var(--muted-text); }
+
+.community-note { max-width: 900px; margin: 0 auto; padding: 1.5rem 1.5rem; }
+.community-note h3 { color: var(--primary); margin-top: 0; }
+.community-note ul { margin: 0.5rem 0 0; padding-left: 1.25rem; color: var(--muted-text); line-height: 1.6; }

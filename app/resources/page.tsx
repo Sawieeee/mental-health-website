@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import "./ResourcesPage.css"; // Import your plain CSS file
-import "./ResourcesPage.css";
+import Card from "../../components/ui/Card";
 
 type Resource = {
   id: number;
@@ -114,13 +115,14 @@ export default function ResourcesPage() {
       <p className="resources-description">
         Explore articles, videos, and infographics to improve your mental health awareness.
       </p>
+      <Image src="/images/resources-illustration.svg" alt="Resources" width={640} height={200} style={{margin: '0 auto 2rem'}} />
 
       {/* Filter Buttons */}
       <div className="filter-buttons">
         {["All", "Article", "Video", "Infographic"].map((category) => (
           <button
             key={category}
-            onClick={() => setFilter(category as any)}
+onClick={() => setFilter(category as "All" | "Article" | "Video" | "Infographic")}
             className={`filter-button ${filter === category ? "active" : ""}`}
           >
             {category}
@@ -131,19 +133,14 @@ export default function ResourcesPage() {
       {/* Resources Grid */}
       <div className="resources-grid">
         {filteredResources.map((resource) => (
-          <div key={resource.id} className="resource-card">
+          <Card key={resource.id} className="resource-card" href={resource.link} target="_blank">
             <span className="resource-type">{resource.type}</span>
             <h2 className="resource-title">{resource.title}</h2>
             <p className="resource-text">{resource.description}</p>
-            <a
-              href={resource.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resource-link"
-            >
+            <span className="resource-link" aria-hidden>
               View Resource →
-            </a>
-          </div>
+            </span>
+          </Card>
         ))}
       </div>
     </div>

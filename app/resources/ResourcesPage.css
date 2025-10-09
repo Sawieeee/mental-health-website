@@ -4,7 +4,7 @@
 .resources-page {
   min-height: 100vh;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #d0f0ea, #f0f5fa, #f7e6f0);
+  background: linear-gradient(135deg, #eff6ff, #f5f3ff, #ecfeff);
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
@@ -15,7 +15,7 @@
 .resources-title {
   font-size: 3rem;
   font-weight: 800;
-  color: #2e7d32;
+  color: var(--primary);
   text-align: center;
   margin-bottom: 1rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
@@ -24,7 +24,7 @@
 /* Page description */
 .resources-description {
   font-size: 1.15rem;
-  color: #555;
+  color: var(--muted-text);
   max-width: 750px;
   text-align: center;
   margin-bottom: 3rem;
@@ -43,9 +43,9 @@
 .filter-button {
   padding: 0.8rem 1.8rem;
   border-radius: 30px;
-  border: none;
-  background: #b2f7ef;
-  color: #2c786c;
+  border: 2px solid transparent;
+  background: var(--soft-green);
+  color: var(--primary-700);
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -54,15 +54,15 @@
 }
 
 .filter-button:hover {
-  background: #7bdcb5;
-  color: #fff;
+  background: var(--soft-green-hover);
+  color: var(--primary-700);
   transform: translateY(-2px);
 }
 
 .filter-button.active {
-  background: #2c786c;
+  background: var(--primary);
   color: #fff;
-  box-shadow: 0 6px 15px rgba(44, 120, 108, 0.3);
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.25);
 }
 
 /* Resources Grid */
@@ -96,7 +96,7 @@
   position: absolute;
   top: 15px;
   right: 20px;
-  background: #2e7d32;
+  background: var(--primary);
   color: white;
   font-size: 0.85rem;
   font-weight: 600;
@@ -109,7 +109,7 @@
 .resource-title {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--teal);
+  color: var(--primary);
   margin-top: 1rem;
   margin-bottom: 0.8rem;
 }
@@ -117,7 +117,7 @@
 /* Card Text */
 .resource-text {
   font-size: 1rem;
-  color: #555;
+  color: var(--muted-text);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -132,7 +132,7 @@
 }
 
 .resource-link:hover {
-  color: #1a4f45;
+  color: var(--primary-600);
   text-decoration: underline;
   transform: translateX(3px);
 }
