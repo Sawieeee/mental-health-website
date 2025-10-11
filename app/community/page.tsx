@@ -17,12 +17,7 @@ export default function CommunityPage() {
 
       <section className="community-grid">
         {/* Discord Card */}
-        <Card
-          className="community-card"
-          href="https://discord.gg/your-invite"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Card className="community-card">
           <div className="community-card-body">
             <div className="community-emoji" aria-hidden>
               <FaDiscord className="w-8 h-8 text-[#5865F2]" /> {/* Discord icon */}
@@ -32,7 +27,7 @@ export default function CommunityPage() {
               Real-time chats, channels by topic, and community events. Private channels for support.
             </p>
             <Button
-              href="https://discord.gg/your-invite"
+              href="https://discord.gg/mhsc"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -42,12 +37,7 @@ export default function CommunityPage() {
         </Card>
 
         {/* Facebook Card */}
-        <Card
-          className="community-card"
-          href="https://www.facebook.com/groups/your-group"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Card className="community-card">
           <div className="community-card-body">
             <div className="community-emoji" aria-hidden>
               <FaFacebook className="w-8 h-8 text-[#1877F2]" /> {/* Facebook icon */}
@@ -57,7 +47,7 @@ export default function CommunityPage() {
               A welcoming group to share experiences, ask questions, and support each other.
             </p>
             <Button
-              href="https://www.facebook.com/groups/your-group"
+              href="https://www.facebook.com/groups/2752414714979406"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -67,7 +57,7 @@ export default function CommunityPage() {
         </Card>
 
         {/* Support Card */}
-        <Card className="community-card" href="/support">
+        <Card className="community-card">
           <div className="community-card-body">
             <div className="community-emoji" aria-hidden>🤝</div>
             <h2>Support & Resources</h2>
